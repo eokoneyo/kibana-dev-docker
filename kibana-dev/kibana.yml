@@ -1,0 +1,10 @@
+server.host: 0.0.0.0
+
+elasticsearch:
+  hosts: https://es01:9200
+  username: kibana_system
+  password: changeme
+  ssl:
+    key: /home/developer/certs/es01/es01.key
+    certificate: /home/developer/certs/es01/es01.crt
+    certificateAuthorities: /home/developer/certs/ca/ca.crt
