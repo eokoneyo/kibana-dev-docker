@@ -4,4 +4,4 @@
 services:
   kibana:
     build:
-      dockerfile: ../oracle-linux.Dockerfile
+      dockerfile: ../vm/oracle/Dockerfile

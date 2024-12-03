@@ -147,7 +147,7 @@ services:
   kibana:
     build:
       context: ./kibana-dev
-      dockerfile: ../Dockerfile
+      dockerfile: ../vm/ubuntu/Dockerfile
     volumes:
       - ./certs:/home/developer/certs
     ports:
