@@ -145,6 +145,9 @@ services:
       retries: 120
 
   kibana:
+    depends_on:
+      es01:
+        condition: service_healthy
     build:
       context: ./kibana-dev
       dockerfile: ../vm/ubuntu/Dockerfile
