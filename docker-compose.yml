@@ -4,8 +4,6 @@
 #
 # More details at: https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-compose-file
 
-version: "3.7"
-
 services:
   setup:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
@@ -147,7 +145,12 @@ services:
       retries: 120
 
   kibana:
-    build: kibana-dev
+    depends_on:
+      es01:
+        condition: service_healthy
+    build:
+      context: ./kibana-dev
+      dockerfile: ../vm/ubuntu/Dockerfile
     volumes:
       - ./certs:/home/developer/certs
     ports:
