@@ -8,15 +8,15 @@
   "scripts": {
     "ubuntu": "docker compose --project-name kibana-dev-ubuntu",
     "oracle": "docker compose -f docker-compose.yml -f docker-compose.oracle-linux.yml --project-name kibana-dev-oracle",
-    "rehl": "docker compose -f docker-compose.yml -f docker-compose.rhel.yml --project-name kibana-dev-rhel",
+    "rhel": "docker compose -f docker-compose.yml -f docker-compose.rhel.yml --project-name kibana-dev-rhel",
     "build:ubuntu": "yarn ubuntu up -d --build",
     "build:oracle": "yarn oracle up -d --build",
-    "build:rehl": "yarn rhel up -d --build",
+    "build:rhel": "yarn rhel up -d --build",
     "shell:ubuntu": "yarn ubuntu exec kibana /bin/bash",
     "shell:oracle": "yarn oracle exec kibana /bin/bash",
-    "shell:rehl": "yarn rehl exec kibana /bin/bash",
+    "shell:rhel": "yarn rhel exec kibana /bin/bash",
     "terminate:ubuntu": "yarn ubuntu down",
     "terminate:oracle": "yarn oracle down",
-    "terminate:rehl": "yarn rehl down"
+    "terminate:rhel": "yarn rhel down"
   }
 }
