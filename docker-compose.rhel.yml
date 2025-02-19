@@ -4,4 +4,4 @@
 services:
   kibana:
     build:
-      dockerfile: ../vm/rehl/Dockerfile
+      dockerfile: ../vm/rhel/Dockerfile

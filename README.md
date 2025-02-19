@@ -5,7 +5,7 @@
 1. Run `yarn build:ubuntu` to test kibana on regular ubuntu linux
 1. Run `yarn build:oracle` to test kibana on oracle
 1. Run `yarn build:rhel` to test kibana on Red Hat Linux
-1. When all services have started, get into an interactive session in Kibana with either `yarn shell:ubuntu` or `yarn shell:oracle` or `yarn shell:rehl` depending on the variant that was just built
+1. When all services have started, get into an interactive session in Kibana with either `yarn shell:ubuntu` or `yarn shell:oracle` or `yarn shell:rhel` depending on the variant that was just built
 1. In the session, type `cd kibana-dev` then `tar xzf kibana-<version>-SNAPSHOT-linux-aarch64.tar.gz`
 1. Set the configuration with `cp kibana.yml kibana-<version>-SNAPSHOT/config/kibana.yml`
 1. Type `cd kibana-<version>-SNAPSHOT` then `bin/kibana` and watch the magic happen.
