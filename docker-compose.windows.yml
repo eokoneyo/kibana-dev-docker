@@ -1,0 +1,24 @@
+# this file only specifies overrides to the main docker compose file, see
+# https://docs.docker.com/compose/multiple-compose-files/merge/
+
+services:
+  kibana:
+    build:
+      dockerfile: ../vm/windows/Dockerfile
+    environment:
+      VERSION: 11 # see https://github.com/dockur/windows#how-do-i-select-the-windows-version
+      KVM: "N"
+      ARGUMENTS: "-accel hvf"
+    devices:
+      # - /dev/kvm #uncomment these lines in linux machines, kvm isn't supported for macos, see https://github.com/dockur/windows/issues/86
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    volumes:
+      - ./certs:/data/developer/certs
+      - ./vm/windows/install.bat:/oem
+    user: !reset null
